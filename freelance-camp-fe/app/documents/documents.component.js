@@ -9,6 +9,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var DocumentsComponent = /** @class */ (function () {
     function DocumentsComponent() {
+        this.pageTitle = "Document Dashboard";
+        this.documents = [
+            {
+                title: "My first doc",
+                description: 'asdfasdfasdf asdf asdf',
+                file_url: 'http://google.com',
+                updated_at: '03/22/18',
+                image_url: 'http://google.com',
+            },
+            {
+                title: "My second doc",
+                description: 'asdfasdfasdf asdf asdf',
+                file_url: 'http://google.com',
+                updated_at: '03/22/18',
+                image_url: 'http://google.com',
+            },
+            {
+                title: "My third doc",
+                description: 'asdfasdfasdf asdf asdf',
+                file_url: 'http://google.com',
+                updated_at: '03/22/18',
+                image_url: 'http://google.com',
+            }
+        ];
     }
     DocumentsComponent = __decorate([
         core_1.Component({
