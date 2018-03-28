@@ -18,6 +18,7 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
 
     if @proposal.save
+      ProposalMailer.email(@proposal).deliver_later
       render json: @proposal, status: :created, location: @proposal
     else
       render json: @proposal.errors, status: :unprocessable_entity
@@ -46,6 +47,6 @@ class ProposalsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def proposal_params
-      params.require(:proposal).permit(:customer, :portfolio_url, :tools, :estimate_hours, :hourly_rate, :weeks_to_complete, :client_email)
+      params.require(:proposal).permit(:customer, :portfolio_url, :tools, :estimated_hours, :hourly_rate, :weeks_to_complete, :client_email)
     end
 end
